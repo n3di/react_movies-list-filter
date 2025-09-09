@@ -10,9 +10,9 @@ export const App: React.FC = () => {
   const [query, setQuery] = useState('');
 
   // przygotowanie przefiltrowanej listy filmów
-  const visibleMovies = movies.filter(movie => {
-    const lowerQuery = query.toLowerCase();
+  const lowerQuery = query.trim().toLowerCase();
 
+  const visibleMovies = movies.filter(movie => {
     return (
       movie.title.toLowerCase().includes(lowerQuery) ||
       movie.description.toLowerCase().includes(lowerQuery)
